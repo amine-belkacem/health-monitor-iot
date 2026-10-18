@@ -1,0 +1,19 @@
+Composant;Broche composant;Signal;Net;Broche ESP32;GPIO
+AD8232;OUTPUT;Signal ECG (analogique);ECG_OUT;34;GPIO34
+AD8232;LO+;Déconnexion électrode +;LO_PLUS;32;GPIO32
+AD8232;LO-;Déconnexion électrode -;LO_MINUS;33;GPIO33
+AD8232;3.3V;Alimentation;3V3;3V3;-
+AD8232;GND;Masse;GND;GND;-
+AD8232;SDN;Shutdown (tiré à 3V3);3V3;3V3;-
+DHT22;VCC;Alimentation;3V3;3V3;-
+DHT22;DATA;One-Wire;DHT_DATA;27;GPIO27
+DHT22;GND;Masse;GND;GND;-
+MAX30102;VIN;Alimentation;3V3;3V3;-
+MAX30102;GND;Masse;GND;GND;-
+MAX30102;SDA;I2C données;SDA;21;GPIO21
+MAX30102;SCL;I2C horloge;SCL;22;GPIO22
+MAX30102;INT;Interruption (non utilisée);NC;-;-
+MQ-135;VCC;Alimentation 5 V;5V;VIN;-
+MQ-135;GND;Masse;GND;GND;-
+MQ-135;AOUT;Sortie analogique;MQ_AOUT;35;GPIO35
+MQ-135;DOUT;Sortie numérique (non utilisée);NC;-;-

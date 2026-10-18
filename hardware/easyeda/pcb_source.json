@@ -1,0 +1,1133 @@
+{
+  "head": {
+    "docType": "3",
+    "editorVersion": "6.5.36",
+    "title": "health-monitor-iot",
+    "uuid": "2f4c9c1e-8b7d-4b5a-9d0e-chm000000001",
+    "c_para": {
+      "name": "CHM-PCB",
+      "pre": "CHM",
+      "inBom": "true"
+    },
+    "x": 0,
+    "y": 0
+  },
+  "canvas": "CA~120.0~75.0~#101820~yes~#3A4A5A~10~100~100~0",
+  "BBox": {
+    "x": 0,
+    "y": 0,
+    "width": 120.0,
+    "height": 75.0
+  },
+  "layers": [
+    "top",
+    "bottom"
+  ],
+  "board": {
+    "width": 120.0,
+    "height": 75.0,
+    "thickness": 1.6,
+    "material": "FR-4",
+    "copper_weight": "1 oz"
+  },
+  "footprints": [
+    {
+      "ref": "U1",
+      "name": "ESP32 DevKit V1",
+      "x": 52.2,
+      "y": 20.8,
+      "rotation": 0,
+      "layer": "top"
+    },
+    {
+      "ref": "J1",
+      "name": "Header 1x06 2.54",
+      "x": 11.5,
+      "y": 37.0,
+      "rotation": 0,
+      "layer": "top"
+    },
+    {
+      "ref": "J2",
+      "name": "Header 1x03 2.54",
+      "x": 11.5,
+      "y": 26.8,
+      "rotation": 0,
+      "layer": "top"
+    },
+    {
+      "ref": "J3",
+      "name": "Header 1x04 2.54",
+      "x": 11.5,
+      "y": 14.1,
+      "rotation": 0,
+      "layer": "top"
+    },
+    {
+      "ref": "J4",
+      "name": "Header 1x05 2.54",
+      "x": 107.5,
+      "y": 22.2,
+      "rotation": 0,
+      "layer": "top"
+    },
+    {
+      "ref": "C1",
+      "name": "100 nF 0805",
+      "x": 103.0,
+      "y": 60.5,
+      "rotation": 0,
+      "layer": "top"
+    },
+    {
+      "ref": "C2",
+      "name": "10 uF 1206",
+      "x": 110.0,
+      "y": 48.5,
+      "rotation": 0,
+      "layer": "top"
+    }
+  ],
+  "pads": [
+    {
+      "ref": "U1",
+      "pin": "EN",
+      "x": 50.0,
+      "y": 54.78,
+      "net": "NC",
+      "drill": 1.0,
+      "shape": "circle",
+      "size": [
+        1.8,
+        1.8
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "VP36",
+      "x": 50.0,
+      "y": 52.24,
+      "net": "NC",
+      "drill": 1.0,
+      "shape": "circle",
+      "size": [
+        1.8,
+        1.8
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "VN39",
+      "x": 50.0,
+      "y": 49.7,
+      "net": "NC",
+      "drill": 1.0,
+      "shape": "circle",
+      "size": [
+        1.8,
+        1.8
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "34",
+      "x": 50.0,
+      "y": 47.16,
+      "net": "ECG_OUT",
+      "drill": 1.0,
+      "shape": "circle",
+      "size": [
+        1.8,
+        1.8
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "35",
+      "x": 50.0,
+      "y": 44.62,
+      "net": "MQ_AOUT",
+      "drill": 1.0,
+      "shape": "circle",
+      "size": [
+        1.8,
+        1.8
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "32",
+      "x": 50.0,
+      "y": 42.08,
+      "net": "LO_PLUS",
+      "drill": 1.0,
+      "shape": "circle",
+      "size": [
+        1.8,
+        1.8
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "33",
+      "x": 50.0,
+      "y": 39.54,
+      "net": "LO_MINUS",
+      "drill": 1.0,
+      "shape": "circle",
+      "size": [
+        1.8,
+        1.8
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "25",
+      "x": 50.0,
+      "y": 37.0,
+      "net": "NC",
+      "drill": 1.0,
+      "shape": "circle",
+      "size": [
+        1.8,
+        1.8
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "26",
+      "x": 50.0,
+      "y": 34.46,
+      "net": "NC",
+      "drill": 1.0,
+      "shape": "circle",
+      "size": [
+        1.8,
+        1.8
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "27",
+      "x": 50.0,
+      "y": 31.92,
+      "net": "DHT_DATA",
+      "drill": 1.0,
+      "shape": "circle",
+      "size": [
+        1.8,
+        1.8
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "14",
+      "x": 50.0,
+      "y": 29.38,
+      "net": "NC",
+      "drill": 1.0,
+      "shape": "circle",
+      "size": [
+        1.8,
+        1.8
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "12",
+      "x": 50.0,
+      "y": 26.84,
+      "net": "NC",
+      "drill": 1.0,
+      "shape": "circle",
+      "size": [
+        1.8,
+        1.8
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "13",
+      "x": 50.0,
+      "y": 24.3,
+      "net": "NC",
+      "drill": 1.0,
+      "shape": "circle",
+      "size": [
+        1.8,
+        1.8
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "GND",
+      "x": 50.0,
+      "y": 21.76,
+      "net": "GND",
+      "drill": 1.0,
+      "shape": "circle",
+      "size": [
+        1.8,
+        1.8
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "VIN",
+      "x": 50.0,
+      "y": 19.22,
+      "net": "5V",
+      "drill": 1.0,
+      "shape": "circle",
+      "size": [
+        1.8,
+        1.8
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "3V3",
+      "x": 101.0,
+      "y": 54.78,
+      "net": "3V3",
+      "drill": 1.0,
+      "shape": "circle",
+      "size": [
+        1.8,
+        1.8
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "GND",
+      "x": 101.0,
+      "y": 52.24,
+      "net": "GND",
+      "drill": 1.0,
+      "shape": "circle",
+      "size": [
+        1.8,
+        1.8
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "15",
+      "x": 101.0,
+      "y": 49.7,
+      "net": "NC",
+      "drill": 1.0,
+      "shape": "circle",
+      "size": [
+        1.8,
+        1.8
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "2",
+      "x": 101.0,
+      "y": 47.16,
+      "net": "NC",
+      "drill": 1.0,
+      "shape": "circle",
+      "size": [
+        1.8,
+        1.8
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "4",
+      "x": 101.0,
+      "y": 44.62,
+      "net": "NC",
+      "drill": 1.0,
+      "shape": "circle",
+      "size": [
+        1.8,
+        1.8
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "16",
+      "x": 101.0,
+      "y": 42.08,
+      "net": "NC",
+      "drill": 1.0,
+      "shape": "circle",
+      "size": [
+        1.8,
+        1.8
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "17",
+      "x": 101.0,
+      "y": 39.54,
+      "net": "NC",
+      "drill": 1.0,
+      "shape": "circle",
+      "size": [
+        1.8,
+        1.8
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "5",
+      "x": 101.0,
+      "y": 37.0,
+      "net": "NC",
+      "drill": 1.0,
+      "shape": "circle",
+      "size": [
+        1.8,
+        1.8
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "18",
+      "x": 101.0,
+      "y": 34.46,
+      "net": "NC",
+      "drill": 1.0,
+      "shape": "circle",
+      "size": [
+        1.8,
+        1.8
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "19",
+      "x": 101.0,
+      "y": 31.92,
+      "net": "NC",
+      "drill": 1.0,
+      "shape": "circle",
+      "size": [
+        1.8,
+        1.8
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "21",
+      "x": 101.0,
+      "y": 29.38,
+      "net": "SDA",
+      "drill": 1.0,
+      "shape": "circle",
+      "size": [
+        1.8,
+        1.8
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "RX0",
+      "x": 101.0,
+      "y": 26.84,
+      "net": "NC",
+      "drill": 1.0,
+      "shape": "circle",
+      "size": [
+        1.8,
+        1.8
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "TX0",
+      "x": 101.0,
+      "y": 24.3,
+      "net": "NC",
+      "drill": 1.0,
+      "shape": "circle",
+      "size": [
+        1.8,
+        1.8
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "22",
+      "x": 101.0,
+      "y": 21.76,
+      "net": "SCL",
+      "drill": 1.0,
+      "shape": "circle",
+      "size": [
+        1.8,
+        1.8
+      ]
+    },
+    {
+      "ref": "U1",
+      "pin": "23",
+      "x": 101.0,
+      "y": 19.22,
+      "net": "NC",
+      "drill": 1.0,
+      "shape": "circle",
+      "size": [
+        1.8,
+        1.8
+      ]
+    },
+    {
+      "ref": "J1",
+      "pin": "1",
+      "x": 16.0,
+      "y": 49.7,
+      "net": "GND",
+      "drill": 1.0,
+      "shape": "rect",
+      "size": [
+        1.8,
+        1.8
+      ]
+    },
+    {
+      "ref": "J1",
+      "pin": "2",
+      "x": 16.0,
+      "y": 47.16,
+      "net": "3V3",
+      "drill": 1.0,
+      "shape": "circle",
+      "size": [
+        1.8,
+        1.8
+      ]
+    },
+    {
+      "ref": "J1",
+      "pin": "3",
+      "x": 16.0,
+      "y": 44.62,
+      "net": "ECG_OUT",
+      "drill": 1.0,
+      "shape": "circle",
+      "size": [
+        1.8,
+        1.8
+      ]
+    },
+    {
+      "ref": "J1",
+      "pin": "4",
+      "x": 16.0,
+      "y": 42.08,
+      "net": "LO_MINUS",
+      "drill": 1.0,
+      "shape": "circle",
+      "size": [
+        1.8,
+        1.8
+      ]
+    },
+    {
+      "ref": "J1",
+      "pin": "5",
+      "x": 16.0,
+      "y": 39.54,
+      "net": "LO_PLUS",
+      "drill": 1.0,
+      "shape": "circle",
+      "size": [
+        1.8,
+        1.8
+      ]
+    },
+    {
+      "ref": "J1",
+      "pin": "6",
+      "x": 16.0,
+      "y": 37.0,
+      "net": "3V3",
+      "drill": 1.0,
+      "shape": "circle",
+      "size": [
+        1.8,
+        1.8
+      ]
+    },
+    {
+      "ref": "J2",
+      "pin": "1",
+      "x": 16.0,
+      "y": 31.92,
+      "net": "3V3",
+      "drill": 1.0,
+      "shape": "rect",
+      "size": [
+        1.8,
+        1.8
+      ]
+    },
+    {
+      "ref": "J2",
+      "pin": "2",
+      "x": 16.0,
+      "y": 29.38,
+      "net": "DHT_DATA",
+      "drill": 1.0,
+      "shape": "circle",
+      "size": [
+        1.8,
+        1.8
+      ]
+    },
+    {
+      "ref": "J2",
+      "pin": "3",
+      "x": 16.0,
+      "y": 26.84,
+      "net": "GND",
+      "drill": 1.0,
+      "shape": "circle",
+      "size": [
+        1.8,
+        1.8
+      ]
+    },
+    {
+      "ref": "J3",
+      "pin": "1",
+      "x": 16.0,
+      "y": 21.76,
+      "net": "5V",
+      "drill": 1.0,
+      "shape": "rect",
+      "size": [
+        1.8,
+        1.8
+      ]
+    },
+    {
+      "ref": "J3",
+      "pin": "2",
+      "x": 16.0,
+      "y": 19.22,
+      "net": "GND",
+      "drill": 1.0,
+      "shape": "circle",
+      "size": [
+        1.8,
+        1.8
+      ]
+    },
+    {
+      "ref": "J3",
+      "pin": "3",
+      "x": 16.0,
+      "y": 16.68,
+      "net": "MQ_AOUT",
+      "drill": 1.0,
+      "shape": "circle",
+      "size": [
+        1.8,
+        1.8
+      ]
+    },
+    {
+      "ref": "J3",
+      "pin": "4",
+      "x": 16.0,
+      "y": 14.14,
+      "net": "NC",
+      "drill": 1.0,
+      "shape": "circle",
+      "size": [
+        1.8,
+        1.8
+      ]
+    },
+    {
+      "ref": "J4",
+      "pin": "1",
+      "x": 112.0,
+      "y": 34.46,
+      "net": "3V3",
+      "drill": 1.0,
+      "shape": "rect",
+      "size": [
+        1.8,
+        1.8
+      ]
+    },
+    {
+      "ref": "J4",
+      "pin": "2",
+      "x": 112.0,
+      "y": 31.92,
+      "net": "GND",
+      "drill": 1.0,
+      "shape": "circle",
+      "size": [
+        1.8,
+        1.8
+      ]
+    },
+    {
+      "ref": "J4",
+      "pin": "3",
+      "x": 112.0,
+      "y": 29.38,
+      "net": "SDA",
+      "drill": 1.0,
+      "shape": "circle",
+      "size": [
+        1.8,
+        1.8
+      ]
+    },
+    {
+      "ref": "J4",
+      "pin": "4",
+      "x": 112.0,
+      "y": 26.84,
+      "net": "SCL",
+      "drill": 1.0,
+      "shape": "circle",
+      "size": [
+        1.8,
+        1.8
+      ]
+    },
+    {
+      "ref": "J4",
+      "pin": "5",
+      "x": 112.0,
+      "y": 24.3,
+      "net": "NC",
+      "drill": 1.0,
+      "shape": "circle",
+      "size": [
+        1.8,
+        1.8
+      ]
+    },
+    {
+      "ref": "C1",
+      "pin": "1",
+      "x": 103.0,
+      "y": 60.5,
+      "net": "3V3",
+      "drill": 1.0,
+      "shape": "rect",
+      "size": [
+        1.8,
+        1.8
+      ]
+    },
+    {
+      "ref": "C1",
+      "pin": "2",
+      "x": 105.54,
+      "y": 60.5,
+      "net": "GND",
+      "drill": 1.0,
+      "shape": "circle",
+      "size": [
+        1.8,
+        1.8
+      ]
+    },
+    {
+      "ref": "C2",
+      "pin": "1",
+      "x": 110.0,
+      "y": 48.54,
+      "net": "3V3",
+      "drill": 1.0,
+      "shape": "rect",
+      "size": [
+        1.8,
+        1.8
+      ]
+    },
+    {
+      "ref": "C2",
+      "pin": "2",
+      "x": 110.0,
+      "y": 46.0,
+      "net": "GND",
+      "drill": 1.0,
+      "shape": "circle",
+      "size": [
+        1.8,
+        1.8
+      ]
+    }
+  ],
+  "tracks": [
+    {
+      "net": "ECG_OUT",
+      "layer": "top",
+      "width": 0.3,
+      "points": [
+        [
+          16.0,
+          44.62
+        ],
+        [
+          22.0,
+          44.62
+        ],
+        [
+          22.0,
+          47.16
+        ],
+        [
+          50.0,
+          47.16
+        ]
+      ]
+    },
+    {
+      "net": "DHT_DATA",
+      "layer": "top",
+      "width": 0.3,
+      "points": [
+        [
+          16.0,
+          29.38
+        ],
+        [
+          20.0,
+          29.38
+        ],
+        [
+          20.0,
+          31.92
+        ],
+        [
+          50.0,
+          31.92
+        ]
+      ]
+    },
+    {
+      "net": "3V3",
+      "layer": "top",
+      "width": 0.5,
+      "points": [
+        [
+          101.0,
+          54.78
+        ],
+        [
+          106.0,
+          54.78
+        ],
+        [
+          106.0,
+          58.5
+        ],
+        [
+          12.0,
+          58.5
+        ],
+        [
+          12.0,
+          47.16
+        ],
+        [
+          16.0,
+          47.16
+        ]
+      ]
+    },
+    {
+      "net": "3V3",
+      "layer": "top",
+      "width": 0.5,
+      "points": [
+        [
+          12.0,
+          47.16
+        ],
+        [
+          12.0,
+          37.0
+        ],
+        [
+          16.0,
+          37.0
+        ]
+      ]
+    },
+    {
+      "net": "3V3",
+      "layer": "top",
+      "width": 0.5,
+      "points": [
+        [
+          12.0,
+          37.0
+        ],
+        [
+          12.0,
+          31.92
+        ],
+        [
+          16.0,
+          31.92
+        ]
+      ]
+    },
+    {
+      "net": "3V3",
+      "layer": "top",
+      "width": 0.5,
+      "points": [
+        [
+          103.0,
+          58.5
+        ],
+        [
+          103.0,
+          60.5
+        ]
+      ]
+    },
+    {
+      "net": "3V3",
+      "layer": "top",
+      "width": 0.5,
+      "points": [
+        [
+          106.0,
+          48.54
+        ],
+        [
+          110.0,
+          48.54
+        ]
+      ]
+    },
+    {
+      "net": "3V3",
+      "layer": "top",
+      "width": 0.5,
+      "points": [
+        [
+          106.0,
+          58.5
+        ],
+        [
+          106.0,
+          34.46
+        ],
+        [
+          112.0,
+          34.46
+        ]
+      ]
+    },
+    {
+      "net": "5V",
+      "layer": "top",
+      "width": 0.5,
+      "points": [
+        [
+          50.0,
+          19.22
+        ],
+        [
+          50.0,
+          12.0
+        ],
+        [
+          12.0,
+          12.0
+        ],
+        [
+          12.0,
+          21.76
+        ],
+        [
+          16.0,
+          21.76
+        ]
+      ]
+    },
+    {
+      "net": "MQ_AOUT",
+      "layer": "bottom",
+      "width": 0.4,
+      "points": [
+        [
+          16.0,
+          16.68
+        ],
+        [
+          8.0,
+          16.68
+        ],
+        [
+          8.0,
+          52.0
+        ],
+        [
+          46.0,
+          52.0
+        ],
+        [
+          46.0,
+          44.62
+        ],
+        [
+          50.0,
+          44.62
+        ]
+      ]
+    },
+    {
+      "net": "LO_PLUS",
+      "layer": "top",
+      "width": 0.3,
+      "points": [
+        [
+          16.0,
+          39.54
+        ],
+        [
+          24.0,
+          39.54
+        ],
+        [
+          24.0,
+          42.08
+        ],
+        [
+          50.0,
+          42.08
+        ]
+      ]
+    },
+    {
+      "net": "LO_MINUS",
+      "layer": "bottom",
+      "width": 0.4,
+      "points": [
+        [
+          16.0,
+          42.08
+        ],
+        [
+          30.0,
+          42.08
+        ],
+        [
+          30.0,
+          39.54
+        ],
+        [
+          50.0,
+          39.54
+        ]
+      ]
+    },
+    {
+      "net": "SDA",
+      "layer": "top",
+      "width": 0.3,
+      "points": [
+        [
+          101.0,
+          29.38
+        ],
+        [
+          112.0,
+          29.38
+        ]
+      ]
+    },
+    {
+      "net": "SCL",
+      "layer": "top",
+      "width": 0.3,
+      "points": [
+        [
+          101.0,
+          21.76
+        ],
+        [
+          108.0,
+          21.76
+        ],
+        [
+          108.0,
+          26.84
+        ],
+        [
+          112.0,
+          26.84
+        ]
+      ]
+    }
+  ],
+  "silkscreen": {
+    "labels": [
+      {
+        "text": "J1 ECG",
+        "x": 23.0,
+        "y": 53.9,
+        "size": 1.2
+      },
+      {
+        "text": "J2 DHT22",
+        "x": 22.8,
+        "y": 33.9,
+        "size": 1.0
+      },
+      {
+        "text": "J3 MQ-135",
+        "x": 22.8,
+        "y": 23.8,
+        "size": 1.0
+      },
+      {
+        "text": "J4 MAX30102",
+        "x": 106.0,
+        "y": 36.4,
+        "size": 1.0
+      },
+      {
+        "text": "ESP32 DEVKIT V1",
+        "x": 54.0,
+        "y": 55.6,
+        "size": 1.5
+      },
+      {
+        "text": "CONNECTED HEALTH MONITOR",
+        "x": 30.0,
+        "y": 70.2,
+        "size": 2.0
+      }
+    ]
+  },
+  "drill": {
+    "tool_1": 1.0,
+    "tool_2": 3.2
+  },
+  "manufacturing": {
+    "files": {
+      "gtl": "chm_top_copper.gtl",
+      "gbl": "chm_bottom_copper.gbl",
+      "gts": "chm_top_mask.gts",
+      "gbs": "chm_bottom_mask.gbs",
+      "gto": "chm_top_silkscreen.gto",
+      "gko": "chm_outline.gko",
+      "drl": "chm_drill.drl"
+    },
+    "note": "Reconstruction - routage simplifie, non valide DRC"
+  }
+}

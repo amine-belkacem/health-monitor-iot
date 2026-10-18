@@ -1,0 +1,221 @@
+{
+  "head": {
+    "docType": "1",
+    "editorVersion": "6.5.36",
+    "title": "health-monitor-iot",
+    "uuid": "8c1d3a52-4f0e-4b7e-9a11-chm000000002",
+    "c_para": {
+      "name": "CHM-SCH",
+      "pre": "CHM",
+      "inBom": "true"
+    },
+    "x": 0,
+    "y": 0
+  },
+  "canvas": "CA~1500~980~#FFFFFF~yes~#CCCCCC~10~100~100~0",
+  "shape": [
+    "W~504~722~982~722~#1e8449~2~0~none~gge1~0~",
+    "W~504~668~640~668~#7d3c98~2~0~none~gge2~0~",
+    "W~640~668~640~692~#7d3c98~2~0~none~gge3~0~",
+    "W~640~692~982~692~#7d3c98~2~0~none~gge4~0~",
+    "W~504~618~680~618~#7d3c98~2~0~none~gge5~0~",
+    "W~680~618~680~662~#7d3c98~2~0~none~gge6~0~",
+    "W~680~662~982~662~#7d3c98~2~0~none~gge7~0~",
+    "W~504~568~600~568~#1f5f8b~2~0~none~gge8~0~",
+    "W~600~568~600~500~#1f5f8b~2~0~none~gge9~0~",
+    "W~600~500~982~500~#1f5f8b~2~0~none~gge10~0~",
+    "W~504~518~560~518~#0e6655~2~0~none~gge11~0~",
+    "W~560~518~560~304~#0e6655~2~0~none~gge12~0~",
+    "W~560~304~982~304~#0e6655~2~0~none~gge13~0~",
+    "W~504~468~530~468~#0e6655~2~0~none~gge14~0~",
+    "W~530~468~530~274~#0e6655~2~0~none~gge15~0~",
+    "W~530~274~982~274~#0e6655~2~0~none~gge16~0~",
+    "W~504~418~520~418~#b9770e~2~0~none~gge17~0~",
+    "W~520~418~520~84~#b9770e~2~0~none~gge18~0~",
+    "W~520~84~982~84~#b9770e~2~0~none~gge19~0~",
+    "P~487~810~0~#1b2733~8pt~3V3~gge20~0~",
+    "P~487~774~0~#1b2733~8pt~GND~gge21~0~",
+    "P~487~718~0~#1b2733~8pt~GPIO34~gge22~0~",
+    "P~487~668~0~#1b2733~8pt~GPIO32~gge23~0~",
+    "P~487~618~0~#1b2733~8pt~GPIO33~gge24~0~",
+    "P~487~568~0~#1b2733~8pt~GPIO27~gge25~0~",
+    "P~487~518~0~#1b2733~8pt~GPIO21~gge26~0~",
+    "P~487~468~0~#1b2733~8pt~GPIO22~gge27~0~",
+    "P~487~418~0~#1b2733~8pt~GPIO35~gge28~0~",
+    "P~487~348~0~#1b2733~8pt~VIN (5 V)~gge29~0~",
+    "T~L~1032~842~0~#1b2733~10pt~J1 AD8232~gge30~0~",
+    "T~L~1032~572~0~#1b2733~10pt~J2 DHT22~gge31~0~",
+    "T~L~1032~412~0~#1b2733~10pt~J4 MAX30102~gge32~0~",
+    "T~L~1032~192~0~#1b2733~10pt~J3 MQ-135~gge33~0~"
+  ],
+  "BBox": {
+    "x": 0,
+    "y": 0,
+    "width": 1500,
+    "height": 980
+  },
+  "titleBlock": {
+    "title": "Système de santé connecté",
+    "rev": "A",
+    "company": "USTHB — Faculté de Génie Électrique",
+    "comment": "M2 Électronique — Systèmes Embarqués"
+  },
+  "components": [
+    {
+      "ref": "U1",
+      "value": "ESP32 DevKit V1",
+      "footprint": "Module 30 broches"
+    },
+    {
+      "ref": "J1",
+      "value": "AD8232",
+      "footprint": "Header 1x06"
+    },
+    {
+      "ref": "J2",
+      "value": "DHT22",
+      "footprint": "Header 1x03"
+    },
+    {
+      "ref": "J3",
+      "value": "MQ-135",
+      "footprint": "Header 1x04"
+    },
+    {
+      "ref": "J4",
+      "value": "MAX30102",
+      "footprint": "Header 1x05"
+    },
+    {
+      "ref": "C1",
+      "value": "100 nF",
+      "footprint": "0805"
+    },
+    {
+      "ref": "C2",
+      "value": "10 uF",
+      "footprint": "1206"
+    }
+  ],
+  "nets": {
+    "ECG_OUT": [
+      [
+        504,
+        258
+      ],
+      [
+        982,
+        258
+      ]
+    ],
+    "LO_MINUS": [
+      [
+        504,
+        312
+      ],
+      [
+        640,
+        312
+      ],
+      [
+        640,
+        288
+      ],
+      [
+        982,
+        288
+      ]
+    ],
+    "LO_PLUS": [
+      [
+        504,
+        362
+      ],
+      [
+        680,
+        362
+      ],
+      [
+        680,
+        318
+      ],
+      [
+        982,
+        318
+      ]
+    ],
+    "DHT_DATA": [
+      [
+        504,
+        412
+      ],
+      [
+        600,
+        412
+      ],
+      [
+        600,
+        480
+      ],
+      [
+        982,
+        480
+      ]
+    ],
+    "SDA": [
+      [
+        504,
+        462
+      ],
+      [
+        560,
+        462
+      ],
+      [
+        560,
+        676
+      ],
+      [
+        982,
+        676
+      ]
+    ],
+    "SCL": [
+      [
+        504,
+        512
+      ],
+      [
+        530,
+        512
+      ],
+      [
+        530,
+        706
+      ],
+      [
+        982,
+        706
+      ]
+    ],
+    "MQ_AOUT": [
+      [
+        504,
+        562
+      ],
+      [
+        520,
+        562
+      ],
+      [
+        520,
+        896
+      ],
+      [
+        982,
+        896
+      ]
+    ]
+  },
+  "note": "Reconstruction : structure documentaire inspirée d'un export EasyEDA Source ; à réimporter et valider dans l'éditeur avant usage."
+}
