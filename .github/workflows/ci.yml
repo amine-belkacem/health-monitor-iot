@@ -1,0 +1,76 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  server-and-hardware:
+    name: Flask server tests + PCB checks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: |
+          set -e
+          pip install -r server/requirements.txt pytest
+      - name: Server tests (thesis data, fig. 3.16 and 3.17)
+        run: |
+          set -e
+          pytest tests/ -v
+      - name: PCB connectivity and routing checks
+        run: |
+          set -e
+          python hardware/tools/check_connectivity.py
+          python hardware/tools/check_routing.py
+
+  ecg-conversion:
+    name: ECG ADC -> mV conversion (C++)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Build and run
+        run: |
+          set -e
+          g++ -Wall -Wextra -I firmware/esp32_health_monitor tests/test_ecg_conversion.cpp -o test_ecg
+          ./test_ecg
+
+  firmware:
+    name: ESP32 firmware build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: arduino/setup-arduino-cli@v2
+      - name: Install ESP32 core and libraries
+        run: |
+          set -e
+          URL=https://espressif.github.io/arduino-esp32/package_esp32_index.json
+          arduino-cli core update-index --additional-urls "$URL"
+          arduino-cli core install esp32:esp32 --additional-urls "$URL"
+          arduino-cli lib install "DHT sensor library" "SparkFun MAX3010x Pulse and Proximity Sensor Library"
+      - name: Compile corrected and thesis firmware
+        run: |
+          set -e
+          arduino-cli compile --fqbn esp32:esp32:esp32 firmware/esp32_health_monitor
+          arduino-cli compile --fqbn esp32:esp32:esp32 firmware/esp32_thesis_original
+
+  flutter:
+    name: Flutter analyze + tests
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: mobile
+    steps:
+      - uses: actions/checkout@v5
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+      - name: Analyze and test
+        run: |
+          set -e
+          flutter pub get
+          flutter analyze --no-fatal-infos
+          flutter test
