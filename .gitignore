@@ -1,0 +1,49 @@
+# ---------- Python / Flask ----------
+__pycache__/
+*.py[cod]
+venv/
+.venv/
+.pytest_cache/
+
+# Base SQLite et exports CSV créés par le serveur à l'exécution
+*.db
+*.sqlite3
+server/export_*.csv
+
+# ---------- Flutter / Dart ----------
+mobile/.dart_tool/
+mobile/build/
+mobile/.flutter-plugins
+mobile/.flutter-plugins-dependencies
+mobile/.packages
+mobile/.pub-cache/
+mobile/.pub/
+mobile/android/.gradle/
+mobile/android/local.properties
+mobile/android/app/build/
+mobile/ios/Pods/
+mobile/ios/Flutter/Generated.xcconfig
+mobile/ios/Flutter/flutter_export_environment.sh
+*.iml
+
+# ---------- Arduino / ESP32 / PlatformIO ----------
+firmware/**/build/
+.pio/
+*.elf
+*.bin
+*.hex
+
+# ---------- Tests C++ ----------
+tests/*.exe
+tests/*.out
+
+# ---------- Secrets (identifiants Wi-Fi, tokens Ngrok) ----------
+.env
+secrets.h
+
+# ---------- Éditeurs / système ----------
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini

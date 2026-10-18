@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Visualisation des Paramètres Vitaux</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f0f4f8;
+      color: #333;
+      padding: 20px;
+      margin: 0;
+    }
+    h1, h2, h3 {
+      color: #005b96;
+    }
+    .chart-box {
+      position: relative;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    canvas {
+      background-color: #fff;
+      border: 1px solid #005b96;
+      box-shadow: 0 0 10px rgba(0, 91, 150, 0.3);
+    }
+    button {
+      margin: 10px 15px;
+      padding: 10px 20px;
+      background-color: #005b96;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    button:hover {
+      background-color: #003f6b;
+    }
+    .sensor-values {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      font-size: 1.1em;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+    }
+    .sensor-values div {
+      background: #fff;
+      padding: 10px 15px;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0, 91, 150, 0.3);
+      min-width: 120px;
+      color: #005b96;
+    }
+    .tab {
+      display: flex;
+      justify-content: center;
+      border-bottom: 1px solid #005b96;
+      background-color: #e6ecf0;
+      margin-bottom: 20px;
+    }
+    .tab button {
+      background-color: inherit;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      padding: 14px 20px;
+      transition: 0.3s;
+      font-size: 17px;
+      color: #005b96;
+    }
+    .tab button:hover {
+      background-color: #ccd6dd;
+    }
+    .tab button.active {
+      background-color: #005b96;
+      color: #fff;
+    }
+    .tabcontent {
+      display: none;
+      padding: 6px 12px;
+      border: 1px solid #005b96;
+      border-top: none;
+      background-color: #fff;
+    }
+    .tabcontent.active {
+      display: block;
+    }
+    #APropos {
+      text-align: center;
+      padding: 20px;
+    }
+    #APropos p {
+      font-weight: bold;
+      font-size: 1.2em;
+      color: #005b96;
+    }
+    #APropos a {
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+    table {
+      margin: 0 auto 20px;
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid #ccd6dd;
+      padding: 6px 12px;
+    }
+    th {
+      background-color: #e6ecf0;
+      color: #005b96;
+    }
+    .status {
+      font-size: 0.9em;
+      color: #777;
+    }
+    .status.error {
+      color: #c0392b;
+    }
+  </style>
+</head>
+<body>
+  <h1>Visualisation en Temps Réel des Paramètres Vitaux</h1>
+
+  <div class="tab">
+    <button class="tablink active" data-tab="Dashboard">Dashboard</button>
+    <button class="tablink" data-tab="ECG">ECG</button>
+    <button class="tablink" data-tab="Capteurs">Capteurs</button>
+    <button class="tablink" data-tab="APropos">À propos</button>
+  </div>
+
+  <!-- Dashboard : dernières valeurs + aperçu ECG -->
+  <div id="Dashboard" class="tabcontent active">
+    <h2>Dashboard</h2>
+    <h3>ECG</h3>
+    <div class="chart-box" style="height:160px"><canvas id="ecgMiniChart"></canvas></div>
+    <div class="sensor-values">
+      <div>Température<br /><b id="valTemp">--</b> °C</div>
+      <div>Humidité<br /><b id="valHum">--</b> %</div>
+      <div>SpO2<br /><b id="valSpo2">--</b> %</div>
+      <div>BPM<br /><b id="valBpm">--</b></div>
+      <div>Qualité de l'air<br /><b id="valAir">--</b></div>
+    </div>
+    <p id="status" class="status">Connexion au serveur...</p>
+  </div>
+
+  <!-- ECG en temps réel -->
+  <div id="ECG" class="tabcontent">
+    <h2>Signal ECG</h2>
+    <div class="chart-box" style="height:320px"><canvas id="ecgChart"></canvas></div>
+    <button id="btnResetEcg">Réinitialiser le graphe</button>
+    <button id="btnExportEcg">Exporter ECG (CSV)</button>
+  </div>
+
+  <!-- Capteurs : tableau des dernières mesures + courbe température -->
+  <div id="Capteurs" class="tabcontent">
+    <h2>Capteurs</h2>
+    <div class="chart-box" style="height:220px"><canvas id="tempChart"></canvas></div>
+    <table>
+      <thead>
+        <tr><th>#</th><th>Température (°C)</th><th>Humidité (%)</th><th>SpO2 (%)</th><th>BPM</th><th>Qualité de l'air</th></tr>
+      </thead>
+      <tbody id="sensorTable"></tbody>
+    </table>
+    <button id="btnExportSensor">Exporter capteurs (CSV)</button>
+  </div>
+
+  <!-- À propos -->
+  <div id="APropos" class="tabcontent">
+    <h2>À propos</h2>
+    <p>Faculté de Génie Électrique</p>
+    <p>Master 2 Électronique, spécialité Systèmes Embarqués</p>
+    <span>Système de santé connecté : ESP32 + Raspberry Pi 5 + Flask + SQLite</span>
+  </div>
+
+  <script>
+    // Les routes sont relatives : la page est servie par Flask (même origine)
+    const ECG_URL = '/data';
+    const SENSOR_URL = '/sensor_data';
+    const ECG_PERIOD_MS = 500;
+    const SENSOR_PERIOD_MS = 3000;
+    const ECG_WINDOW = 170;   // même taille que le LIMIT de la route /data
+
+    // ---------- Onglets ----------
+    document.querySelectorAll('.tablink').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.tablink').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.tabcontent').forEach(t => t.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById(btn.dataset.tab).classList.add('active');
+      });
+    });
+
+    // ---------- Graphes ----------
+    function lineChart(canvasId, label, color) {
+      return new Chart(document.getElementById(canvasId), {
+        type: 'line',
+        data: { labels: [], datasets: [{ label, data: [], borderColor: color, borderWidth: 1.5, pointRadius: 0, tension: 0.1 }] },
+        options: { animation: false, maintainAspectRatio: false, scales: { x: { display: false } } }
+      });
+    }
+
+    const ecgChart = lineChart('ecgChart', 'ECG (mV)', '#26a69a');
+    const ecgMiniChart = lineChart('ecgMiniChart', 'ECG (mV)', '#26a69a');
+    const tempChart = lineChart('tempChart', 'Température (°C)', '#005b96');
+
+    // id de la dernière mesure ECG affichée ; après un reset on ne garde que les nouvelles
+    let lastEcgId = 0;
+    let ecgResetId = 0;
+
+    function pushPoints(chart, points) {
+      points.forEach(p => {
+        chart.data.labels.push(p.id);
+        chart.data.datasets[0].data.push(p.ecg_value);
+      });
+      // fenêtre glissante : on supprime les plus anciens points
+      const extra = chart.data.labels.length - ECG_WINDOW;
+      if (extra > 0) {
+        chart.data.labels.splice(0, extra);
+        chart.data.datasets[0].data.splice(0, extra);
+      }
+      chart.update();
+    }
+
+    function setStatus(text, isError) {
+      const el = document.getElementById('status');
+      el.textContent = text;
+      el.className = isError ? 'status error' : 'status';
+    }
+
+    async function updateEcg() {
+      try {
+        const res = await fetch(ECG_URL);
+        const rows = await res.json();
+        const fresh = rows.filter(r => r.id > lastEcgId && r.id > ecgResetId);
+        if (fresh.length > 0) {
+          lastEcgId = fresh[fresh.length - 1].id;
+          pushPoints(ecgChart, fresh);
+          pushPoints(ecgMiniChart, fresh);
+        }
+        setStatus('Dernière mise à jour : ' + new Date().toLocaleTimeString(), false);
+      } catch (e) {
+        setStatus('Serveur injoignable (' + e.message + ')', true);
+      }
+    }
+
+    async function updateSensors() {
+      try {
+        const res = await fetch(SENSOR_URL);
+        const rows = await res.json();
+        if (rows.length === 0) return;
+
+        const last = rows[rows.length - 1];
+        document.getElementById('valTemp').textContent = last.temperature;
+        document.getElementById('valHum').textContent = last.humidity;
+        document.getElementById('valSpo2').textContent = last.spo2;
+        document.getElementById('valBpm').textContent = last.bpm;
+        document.getElementById('valAir').textContent = last.air_quality;
+
+        // tableau : les 10 dernières mesures, la plus récente en haut
+        const tbody = document.getElementById('sensorTable');
+        tbody.innerHTML = '';
+        rows.slice(-10).reverse().forEach((r, i) => {
+          const tr = document.createElement('tr');
+          [i + 1, r.temperature, r.humidity, r.spo2, r.bpm, r.air_quality].forEach(v => {
+            const td = document.createElement('td');
+            td.textContent = v;
+            tr.appendChild(td);
+          });
+          tbody.appendChild(tr);
+        });
+
+        tempChart.data.labels = rows.map((_, i) => i);
+        tempChart.data.datasets[0].data = rows.map(r => r.temperature);
+        tempChart.update();
+      } catch (e) {
+        setStatus('Serveur injoignable (' + e.message + ')', true);
+      }
+    }
+
+    // ---------- Boutons ----------
+    document.getElementById('btnResetEcg').addEventListener('click', () => {
+      ecgResetId = lastEcgId;
+      [ecgChart, ecgMiniChart].forEach(c => {
+        c.data.labels = [];
+        c.data.datasets[0].data = [];
+        c.update();
+      });
+    });
+    document.getElementById('btnExportEcg').addEventListener('click', () => {
+      window.location.href = '/export_ecg';
+    });
+    document.getElementById('btnExportSensor').addEventListener('click', () => {
+      window.location.href = '/export_sensor';
+    });
+
+    // ---------- Rafraîchissement ----------
+    updateEcg();
+    updateSensors();
+    setInterval(updateEcg, ECG_PERIOD_MS);
+    setInterval(updateSensors, SENSOR_PERIOD_MS);
+  </script>
+</body>
+</html>
