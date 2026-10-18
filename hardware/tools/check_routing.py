@@ -52,3 +52,6 @@ for i, (l1, n1, w1, p1) in enumerate(gh.ROUTES):
 print("croisements même couche :", len(cross))
 for c in cross:
     print(" ", c)
+
+# code de sortie non nul si un court-circuit ou un croisement est trouvé (utilisé par la CI)
+sys.exit(1 if bad or cross else 0)
